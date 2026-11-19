@@ -29,29 +29,18 @@ The following diagram illustrates the complete RAG architecture.
 
 mermaid
 flowchart TD
-
     A["📄 Input Document"] --> B["Text Splitter"]
-
     B --> C["Text Chunks"]
-
     C --> D["Hugging Face Embeddings"]
-
     D --> E["Vector Embeddings"]
-
     E --> F[("ChromaDB Vector Database")]
 
     G["👤 User Question"] --> H["Similarity Search"]
-
     F --> H
-
     H --> I["Relevant Document Chunks"]
-
     I --> J["LangChain RetrievalQA"]
-
     G --> J
-
     J --> K["Llama 3.2 via Ollama"]
-
     K --> L["💬 Generated Answer"]
 
     style A fill:#dbeafe,stroke:#2563eb,color:#111827
@@ -112,35 +101,20 @@ The following diagram illustrates the complete installation and execution proces
 
 mermaid
 flowchart TD
-
     A["🐍 Install Python"] --> B["📁 Clone GitHub Repository"]
-
     B --> C["Create Virtual Environment"]
-
     C --> D["Install LangChain Packages"]
-
     D --> E["Install Document Loaders & Splitters"]
-
     E --> F["Install ChromaDB & Hugging Face"]
-
     F --> G["⚙️ Install Ollama"]
-
     G --> H["Download Llama 3.2"]
-
     H --> I["Load Hugging Face Embedding Model"]
-
     I --> J["Run main.py"]
-
     J --> K["📄 Load Documents"]
-
     K --> L["Generate Embeddings"]
-
     L --> M["Store Vectors in ChromaDB"]
-
     M --> N["💬 Ask Questions"]
-
     N --> O["Retrieve Relevant Context"]
-
     O --> P["Generate Answer using Llama 3.2"]
 
     style A fill:#dbeafe,stroke:#2563eb,color:#111827
@@ -448,9 +422,7 @@ CSV	CSVLoader	langchain_community.document_loaders
 HTML	BSHTMLLoader	langchain_community.document_loaders
 Text	TextLoader	langchain_community.document_loaders
 Website	WebBaseLoader	langchain_community.document_loaders
-
-Example PDF loader:
-
+Example PDF Loader
 python
 from langchain_community.document_loaders import PyPDFLoader
 
@@ -460,9 +432,7 @@ pages = loader.load()
 
 print(pages[0].page_content)
 
-
-Example CSV loader:
-
+Example CSV Loader
 python
 from langchain_community.document_loaders import CSVLoader
 
@@ -472,9 +442,7 @@ documents = loader.load()
 
 print(documents[0].page_content)
 
-
-Example HTML loader:
-
+Example HTML Loader
 python
 from langchain_community.document_loaders import BSHTMLLoader
 
@@ -554,7 +522,7 @@ ChromaDB Documentation
 Sentence Transformers
 👨‍💻 Author
 
-Your Name
+Bibek Pandey
 
 GitHub: https://github.com/bibekpandey0521
 
