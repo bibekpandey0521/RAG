@@ -144,7 +144,7 @@ llm = ChatOllama(
 
 # Create the RAG pipeline
 qa_chain = RetrievalQA.from_chain_type(
-    lllm = llm,
+    llm = llm,
     chain_type = "stuff",
     retriever = vectorstore.as_retriever()
 )
