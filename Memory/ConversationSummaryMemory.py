@@ -16,10 +16,19 @@ anthropic_api_key = os.getenv('API_KEY')
 os.environ["ANTHROPIC_API_KEY"] = anthropic_api_key
 
 # Initialize the LLM
+# llm = ChatOllama(
+#     model = "llama3.2:latest",
+#     temperature=0.7
+# )
+
 llm = ChatOllama(
-    model = "llama3.2:latest",
-    temperature=0.7
+    model="llama3.2:latest",
+    temperature=0.7,
+    num_predict=256,
+    num_ctx=2048,
+    keep_alive="10m"
 )
+
 
 # create a long string
 schedule = "There is a meeting at 8am with product team.\
